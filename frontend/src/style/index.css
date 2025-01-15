@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Glacial Indifference", "sans-serif";
+    color: #797676;
+}
+
+.spacer {
+    height: 147px;
+}
+
+.orange-text {
+    color: #f89576;
+    text-align: center;
+    padding-top: +3%;
+    padding-bottom: +3%;
+    font-size: 65px;
+    font-family: "Loved by the King", "cursive", "google";
+}
+
+.header-text {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 100px;
+    font-family: "Glacial Indifference", "sans-serif";
+    color: #444;
+}
+
+.text {
+    font-size: 20px;
+    text-align: left;
+}
+
+.h2-text {
+    font-size: 20px;
+    text-align: left;
+    font-weight: 700;
+    color: #797676;
+    padding-bottom: +1%;
+    padding-top: +1%;
+}
+
+.page-text {
+    margin-left: +25%;
+    margin-right: +25%;
+}
+
+.photographer {
+    text-align: center;
+    font-size: 16px;
+    margin-top: +2%;
+    margin-bottom: +2%;
+}
+
+h3 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+    color: #444;
+    padding-bottom: +1%;
+    padding-top: +1%;
+}
+
+pre {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    color: #333;
+    background-color: #333;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+#home-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-pfp {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-decor {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.video {
+    width: 560px;
+    height: 315px;
+}
+
+@media (max-width: 900px) {
+    .spacer{
+        height: 0;
+    }
+
+    #home-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    .page-text {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .image-pfp {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    .image-decor {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .orange-text {
+        color: #f89576;
+        text-align: center;
+        padding-top: +3%;
+        padding-bottom: +3%;
+        font-size: 42px;
+        font-family: "Loved by the King", "cursive", "google";
+    }
+
+    .video {
+        width: 100%;
+        height: 200px;
+    }
+
+    .image-decor {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+}
+
+/* Ensure the PDF container takes up the full screen */
+.pdf-container {
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the page itself takes the full available width and height */
+.page-pdf {
+    width: 100%;  /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    display: block; /* Ensure no unnecessary inline behavior */
+
+}
+
+/* Remove space between pages */
+.rpv-core__viewer {
+    display: flex;
+    flex-direction: column;  /* Stack pages vertically */
+    gap: 0;  /* Remove gap between pages */
+
+}
+
+/* Remove borders and shadows from PDF pages */
+.rpv-core__page-layer {
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+}
+
+/* Ensure pages do not have padding */
+.rpv-core__page {
+    padding: 0 !important; /* Remove padding around individual pages */
+    width: 100%;           /* Make the page take full width */
+    height: 100%;          /* Make the page take full height */
+    overflow: hidden;
+    user-select: text;
+    cursor: text; 
+}
+
+/* Optional: Allow vertical scrolling if the content overflows */
+.rpv-core__viewer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Ensure individual pages are centered properly */
+.rpv-core__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: text;
+    cursor: text; 
+}
+

@@ -1,0 +1,31 @@
+.carouselMini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carouselMini-image {
+    width: 100%;
+    height: auto; 
+}
+  
+.carouselMini-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+.carouselMini-button:first-of-type {
+    left: 10px;
+}
+  
+.carouselMini-button:last-of-type {
+    right: 10px;
+}
+  

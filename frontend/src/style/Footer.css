@@ -1,0 +1,88 @@
+footer {
+    background-color: #e6e3d9;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.ft-list1 {
+    display: horizontal;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style-type: none;
+}
+.ft-list2 {
+    display: horizontal;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    list-style-type: none;
+}
+
+.ft-logo {
+    height: 114;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.boldTextFooter{
+    position: relative;
+    font-size: 18px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.normTextFooter {
+    position: relative;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 20px 15px;
+        flex-direction: column; /* Stack footer items vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .ft-logo {
+        height: 60px;
+    }
+
+    .ft-list1, .ft-list2 {
+        width: 80%; /* Make the lists take up 80% width on smaller screens */
+        text-align: center; /* Center text in the lists */
+    }
+
+    .boldTextFooter, .normTextFooter {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 15px 10px;
+    }
+
+    .ft-logo {
+        height: 50px; /* Smaller logo on very small screens */
+    }
+
+    .ft-list1, .ft-list2 {
+        width: 100%; /* Make lists take full width */
+        margin-bottom: 10px; /* Add some space between the lists */
+    }
+
+    .boldTextFooter, .normTextFooter {
+        font-size: 14px; /* Further decrease font size */
+    }
+
+    a {
+        font-size: 14px;
+        margin-bottom: 10px; /* Space between links */
+    }
+}
