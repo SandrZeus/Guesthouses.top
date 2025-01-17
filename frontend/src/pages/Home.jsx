@@ -1,29 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next"; // Import the translation hook
 import Carousel from "../components/Carousel";
 import PDF from "../components/Pdf";
 import "../style/index.css";
 import image from "../assets/gutenmorgenberlin.jpg";
-import pdfEnglish from '../assets/en_pdf.pdf'; // Local PDF for English
-import pdfGerman from '../assets/de_pdf.pdf'; // Local PDF for German
 
 const Home = () => {
-    const { i18n } = useTranslation(); // Access the translation instance
+    const { i18n } = useTranslation(); // Access the i18n instance
     const [pdfs, setPdfs] = useState([]);
 
     useEffect(() => {
-        const language = i18n.language === 'en' ? 'en' : 'de';
-        const localPdfs = language === 'en' ? [{ id: 1, language: 'en', url: pdfEnglish }] : [{ id: 1, language: 'de', url: pdfGerman }];
-        
-        // Set the PDFs state
-        setPdfs(localPdfs);
-    }, [i18n.language]); // Refetch PDFs when language changes
+        const fetchPdfs = async () => {
+            try {
+                // Use the current language set in i18n
+                const language = i18n.language === 'de' ? 'de' : 'en'; // Default to 'en' if not German
+                const response = await fetch(`https://api.guesthouses.top/api/pdfs/${language}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    // Sort PDFs by id in descending order (newest first)
+                    const sortedPdfs = data.sort((a, b) => b.id - a.id);
+                    setPdfs(sortedPdfs);
+                } else {
+                    console.error('Failed to fetch PDFs');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+
+        fetchPdfs();
+    }, [i18n.language]); // Refetch PDFs when the language changes
 
     return (
         <div>
             <Carousel />
             <br />
-            <img src={image} className="page-text" id="home-image" />
+            <img src={image} className="page-text" id="home-image" alt="Guten Morgen Berlin" />
             <br />
             <div>
                 {pdfs.length > 0 ? (
