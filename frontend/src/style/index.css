@@ -83,6 +83,8 @@ hr {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-pfp {
@@ -172,6 +174,7 @@ hr {
     height: 100%; /* Full height of the container */
     display: block; /* Ensure no unnecessary inline behavior */
 
+
 }
 
 /* Remove space between pages */
@@ -213,5 +216,35 @@ hr {
     align-items: center;
     user-select: text;
     cursor: text; 
+}
+
+.pdf-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Space between PDF and buttons */
+    gap: 20px; /* Space between buttons */
+}
+
+.pdf-nav-button {
+    background-color: #f89576; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pdf-nav-button:hover {
+    background-color: #f35f33; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.pdf-nav-button:disabled {
+    background-color: #CCC; /* Disabled button color */
+    cursor: not-allowed; /* Indicate button is not clickable */
+    opacity: 0.5; /* Dimmed look for disabled state */
 }
 
